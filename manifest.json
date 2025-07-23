@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Discord Auto Stamp",
+  "version": "1.0",
+  "description": "Discordで自動的にスタンプ（リアクション）を追加する拡張機能",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://discord.com/*",
+    "*://*.discord.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://discord.com/*",
+        "*://*.discord.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Discord Auto Stamp"
+  }
+}
